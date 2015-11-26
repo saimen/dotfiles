@@ -1,0 +1,40 @@
+source /etc/Muttrc.gpg.dist
+
+set editor=`echo \$EDITOR`
+set sendmail="/usr/bin/msmtp"
+set sort=threads
+set sort_aux=last-date-received
+set mailcap_path=~/.mutt/mailcap
+#set query_command="echo '%s' >> query_log"
+set query_command="~/.helpers/query_eds.py '%s'"
+unset markers
+#set query_command="
+source ~/.mutt/mailboxes
+# these may have to be set per account
+set header_cache=~/.cache/mutt
+set edit_headers=yes
+set realname="`echo "LS0tLS1CRUdJTiBQR1AgTUVTU0FHRS0tLS0tClZlcnNpb246IEdudVBHIHYyCgpoUUlNQS85UGFpaXNHTnMvQVEvOENDY2dCZmJVTXJVRUUvZDBJdzBDNzc2VWszNE5IWVZLQ2ViSExobFJRTnBVCndhSTVWY2pYY2NRV1pycTJuNWFPL3VFNnNMWm9SN2dkejRYRjJ0b1UvSjV5M0ZJekhiVDZlSW5JZmNpRUNKZXkKOHJWT2NzYm1xc294SjN4VHFvN2dhSnZhQTVjNzNhUlJjTnEzbDhVV3JaMGFZd1RHa0VOMFdxWFJWVnltM3dWRQo5VFIwcnl3OWprajJWeUZxdU9sZkVNOVc2WjVabkdpaExNY3FTanZCeTJDbVJxaVpIZW5VbythNTF1eGFlb2trCm1TakdWVFc0aFg2bmZRY1pZclArSjhndHVXa2JJcnFHQ2ZkUzA5dzBWcFE2aWdQdngvRTJYUHNJSUkxZ1drUnYKM3U1cXczbmxYVTZSS1VSOE1sSW8rUEFrd2lNMDZBVVdSeFV3TTFVNG5TSDg5cTdlcGxibXBKWTFYU2F4R0xwMgpxVkdKRER6SFN2RDFNU3N6bGN6a3dxUEg4V1lUU0Fqd3JocTZmSnhZeUI2K3l4RlhHRHluVkVKdXlGWUpXTkV6CkNSYUc3U1NRdFZySW5WeHRSQkRjN1J5M3VibTZqbzdZM0pGYnVIdi9aUnduaWZiNmhXckJVdnM5bUdNL1ZNVHIKOEpqN0UwZEQzWUlUTnMxY2M2ZXN2bkV0ZXFsZE8rYkt1cTJBdHZJN25kNURUcEpxckN2THEzZDdlUncyNUJUZQpTTFp4czFCSFlKTFNudSs1THNkSnUxOHlTWXl2NGxsU3RrNC85MmpsaktWNnArYjNBMXhWRFNJWGZFeEVrTlZXClRSZTM5TEYvM25icFFrTXNrRUNPaTJDamNqdmRTU1VwMTV6cGEwT09vN1Z6b3FxNFQ1cXVFa0xNN2c3Wm9xL1MKUndGMStjTG5JcWFxVjlkVVJYMjNneXNXTmRLS3JudG1udUZVT2lReGxmVmtiajhUc0wvWll4VFNodWYvbGRYUApVZTU0TEZ5RTZYOVJDTzZEVjJyRVlweGJxR0VCZ3J6aAo9QjhkcAotLS0tLUVORCBQR1AgTUVTU0FHRS0tLS0tCg==" | base64 -d | gpg --armor -r AC18DB3F -d -`"
+set use_from=yes
+set envelope_from=yes
+set mime_forward=	yes
+set mime_forward_rest = yes
+
+#IMAP: offlineIMAP gmx
+source ~/.mutt/gmx
+
+#IMAP: offlineIMAP gmail
+source ~/.mutt/gmail
+
+# key-bindings
+bind index - collapse-thread
+bind index + collapse-thread
+bind editor <TAB> complete-query
+bind editor ^T complete
+
+# macros
+macro index <F2> "<change-folder> =../gmail/Inbox<enter><enter-command>source ~/.mutt/gmail<enter>" "open a different folder"
+macro index <F3> "<change-folder> =../gmx/Inbox<enter><enter-command>source ~/.mutt/gmx<enter>" "open a different folder"
+
+# -*-muttrc-*-
+source ~/.mutt/mutt-colors-solarized/mutt-colors-solarized-dark-16.muttrc
+source ~/.mutt/gpg.rc

@@ -1,0 +1,9 @@
+image/*; feh -. %s
+application/pdf; mupdf %s
+text/html; firefox %s ; test=test -n "$DISPLAY"
+application/msword; lowriter %s
+application/vnd.openxmlformats-officedocument.wordprocessingml.document; lowriter %s
+application/vnd.ms-excel; localc %s
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; localc %s
+video/*; mpv %s
+binary/octet-stream; mupdf %s

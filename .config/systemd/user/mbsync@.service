@@ -1,0 +1,11 @@
+[Unit]
+Description=mbsync for mbox: %i
+Requires=cruft.target
+After=cruft.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/mbsync -q %i
+
+[Install]
+WantedBy=default.target

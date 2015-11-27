@@ -1,0 +1,6 @@
+[Unit]
+Description=Stuff after login
+#Wants=multi-user.target
+
+[Install]
+Alias=default.target

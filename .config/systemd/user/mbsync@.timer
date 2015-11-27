@@ -1,0 +1,11 @@
+[Unit]
+Description=sync mailboxes with %i
+Requires=cruft.target
+After=cruft.target
+
+[Timer]
+OnUnitActiveSec=1min
+#OnCalendar=*-*-* *:*:00
+
+[Install]
+WantedBy=default.target

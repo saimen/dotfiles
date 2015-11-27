@@ -69,7 +69,7 @@ Urxvt.fadeColor:               S_base03
 Urxvt.cursorColor:             S_base1
 Urxvt.pointerColorBackground:  S_base01
 Urxvt.pointerColorForeground:  S_base1
-U
+
 Urxvt.color0:                  S_base02
 Urxvt.color1:                  S_red
 Urxvt.color2:                  S_green

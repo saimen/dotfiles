@@ -95,6 +95,8 @@ if !exists("g:autocommands_loaded")
 	autocmd BufNewFile,BufRead /home/saimen/Development/neovim/* set nowrap tabstop=2 shiftwidth=2 expandtab
 	" Activate language detection for LaTeX files
 	autocmd FileType tex,latex call DetermineLanguageLatex()
+	" VHDL files
+	autocmd FileType vhdl set nowrap tabstop=2 shiftwidth=2 expandtab
 endif
 " make _ word separator in C
 "autocmd FileType c set iskeyword-=_

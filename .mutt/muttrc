@@ -5,10 +5,8 @@ set sendmail="/usr/bin/msmtp"
 set sort=threads
 set sort_aux=last-date-received
 set mailcap_path=~/.mutt/mailcap
-#set query_command="echo '%s' >> query_log"
-set query_command="~/.helpers/query_eds.py '%s'"
+set query_command="lbdbq '%s' 2>/dev/null"
 unset markers
-#set query_command="
 source ~/.mutt/mailboxes
 # these may have to be set per account
 set header_cache=~/.cache/mutt

@@ -93,6 +93,7 @@ if !exists("g:autocommands_loaded")
 	autocmd FileType mail DeleteTrailingWhitespace
 	" Change standard indentatoin for neovmi project
 	autocmd BufNewFile,BufRead /home/saimen/Development/neovim/* set nowrap tabstop=2 shiftwidth=2 expandtab
+	autocmd BufNewFile,BufRead /home/saimen/Development/bosch/* set nowrap tabstop=3 shiftwidth=3 expandtab
 	" Activate language detection for LaTeX files
 	autocmd FileType tex,latex call DetermineLanguageLatex()
 	" VHDL files
@@ -195,7 +196,7 @@ endfunction
 function! DetermineLanguageLatex()
 	let language_line = "language_unknown"
 	for line in readfile(expand("%"))
-		if line =~ '\\(usepackage\[[a-z]*\]{babel}'"|documentclass\[[a-z]*\]{*})'
+		if line =~ '\\usepackage\[[a-z]*\]{babel}'"|documentclass\[[a-z]*\]{*})'
 			let language_line = line
 		endif
 	endfor
